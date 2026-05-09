@@ -98,7 +98,7 @@ a:hover {
     }
 }
 .home-view {
-    background-image: url("/Photos/view pic.webp");
+    background-image: url("../Photos/view pic.webp");
     padding: 100px 0px 50px 0px;
     width: 100%;
     background-size: cover;
