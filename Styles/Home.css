@@ -221,7 +221,7 @@ a:hover {
 }
 
 .unskilled-down {
-    background-image: url(/Photos/unskilled\ image.jpg);
+    background-image: url("../Photos/unskilled image.jpg");
     background-size: cover;
     background-position: center 2px;
     background-repeat: no-repeat;
@@ -319,7 +319,7 @@ a:hover {
     min-height: 90vh;
 
     /* BACKGROUND IMAGE */
-    background-image: url("/Photos/drive2.jpeg");
+    background-image: url("../Photos/drive2.jpeg");
 
     background-position:
         center
