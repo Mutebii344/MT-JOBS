@@ -1,0 +1,106 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #e9f0ff, #f7f9fc);
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+}
+}
+
+/* Form Container */
+.container {
+    background: #ffffff;
+    width: 450px;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border-top: 5px solid #007BFF;
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    font-size: 24px;
+    color: #222;
+    margin-bottom: 5px;
+    
+}
+
+#jobTitle {
+    text-align: center;
+    font-size: 18px;
+    color: #007BFF;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-left: 350px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="file"] {
+    width: 50%;
+    padding: 11px;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+    transition: all 0.25s ease;
+    background: #fafafa;
+    margin-left: 350px;
+}
+
+/* Input focus */
+input:focus {
+    border-color: #007BFF;
+    background: #fff;
+    box-shadow: 0 0 6px rgba(0, 123, 255, 0.2);
+}
+
+/* Button */
+button {
+    width: 50%;
+    margin-top: 22px;
+    padding: 12px;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-left: 350px;
+}
+
+/* Button hover */
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* Button active */
+button:active {
+    transform: scale(0.98);
+}

@@ -1,0 +1,211 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* PAGE BACKGROUND */
+body {
+    background: #f4f6f9;
+}
+
+/* CENTER CONTENT */
+.page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* LOGIN CARD */
+.container {
+    width: 380px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transition: 0.3s ease;
+}
+
+/* TITLE */
+h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 10px;
+}
+
+/* DARK MODE TOGGLE */
+#darkToggle {
+    display: none;
+}
+
+.dark-btn {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    color: #1e3a8a;
+}
+
+/* ROLE SWITCH */
+.role {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+/* hide radio */
+.role input {
+    display: none;
+}
+
+/* role buttons */
+.role label {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    background: #e5e7eb;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+/* active role */
+.role input:checked + label {
+    background: #1e3a8a;
+    color: white;
+}
+
+/* FORM */
+form {
+    margin-top: 10px;
+}
+
+label {
+    font-size: 14px;
+    display: block;
+    margin-top: 10px;
+}
+
+/* INPUTS */
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.2s;
+}
+
+/* focus */
+input:focus {
+    border-color: #1e3a8a;
+}
+
+/* OPTIONS ROW */
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 12px 0;
+    font-size: 13px;
+}
+
+/* remember me fix */
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.remember input {
+    margin: 0;
+}
+
+/* forgot link */
+.options a {
+    text-decoration: none;
+    color: #1e3a8a;
+}
+
+/* LOGIN BUTTON */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #1e3a8a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #162f6b;
+}
+
+/* ========================= */
+/* 🌙 DARK MODE */
+/* ========================= */
+
+#darkToggle:checked ~ .page {
+    background: #0f172a;
+    color: #e2e8f0;
+}
+
+/* card */
+#darkToggle:checked ~ .page .container {
+    background: #1e293b;
+}
+
+/* title */
+#darkToggle:checked ~ .page h1 {
+    color: #3b82f6;
+}
+
+/* inputs */
+#darkToggle:checked ~ .page input[type="email"],
+#darkToggle:checked ~ .page input[type="password"] {
+    background: #0f172a;
+    color: white;
+    border: 1px solid #334155;
+}
+
+/* role buttons */
+#darkToggle:checked ~ .page .role label {
+    background: #334155;
+    color: #e2e8f0;
+}
+
+/* active role dark */
+#darkToggle:checked ~ .page .role input:checked + label {
+    background: #3b82f6;
+}
+
+/* links */
+#darkToggle:checked ~ .page .options a {
+    color: #3b82f6;
+}
+
+/* button */
+#darkToggle:checked ~ .page button {
+    background: #3b82f6;
+}
+
+#darkToggle:checked ~ .page button:hover {
+    background: #2563eb;
+}
+
+/* dark mode label */
+#darkToggle:checked ~ .page .dark-btn {
+    color: #3b82f6;
+}

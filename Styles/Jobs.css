@@ -1,0 +1,167 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    margin: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.job-card {
+    background: white;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-left: 6px solid #007bff; 
+}
+
+.job-card:hover {
+    transform: scale(1.01);
+    background: #ffffff;
+}
+
+.job-time{
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+
+    font-size: 12px;
+    color: gray;
+    background-color: antiquewhite;
+    padding: 3px 8px;
+    border-radius: 5px;
+}
+
+/* Label styling */
+.label {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    /* background: #007bff; */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.label.skilled {
+    background: #007bff; /* blue */
+}
+
+/* Unskilled jobs */
+.label.unskilled {
+    background: #28a745; /* green */
+}
+
+.label.driving {
+    background: #ffc107; /* yellow */
+}
+
+h2 {
+    margin-top: 0;
+}
+
+button {
+    width: auto; /* Overrides previous 100% width */
+    min-width: 140px;
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap; /* Prevents button text from wrapping */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.search-bar {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 700px;
+    padding: 10px;
+    /* background: #f5f7fb; */
+    border-radius: 12px;
+    /* box-shadow: 0 4px 12px rgba(0,0,0,0.08); */
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.search-bar input:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74,144,226,0.4);
+}
+
+.search-bar button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+/* Search button */
+.search-bar button:first-of-type {
+    background: #4a90e2;
+    color: white;
+}
+
+.search-bar button:first-of-type:hover {
+    background: #357ac9;
+}
+
+/* Reset button */
+.search-bar .reset {
+    background: #e74c3c;
+    color: white;
+}
+
+.search-bar .reset:hover {
+    background: #c0392b;
+}
+
+@media screen and (max-width: 700px) {
+
+    .search-bar {
+        flex-direction: column;
+        width: 95%;
+        gap: 8px;
+        padding: 12px;
+    }
+
+    .search-bar input {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .search-bar button {
+        width: 100%;
+        padding: 12px;
+    }
+}

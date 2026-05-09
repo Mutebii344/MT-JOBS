@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MT Jobs Finder</title>
+    <link rel="stylesheet" href="./Styles/Home.css"/>
+</head>
+<body>
+    
+    <nav class="nav-bar">
+        <div class="logo">
+            <img src="./Photos/Logo.png" alt="website logo">
+            <h4>MT JOBS</h4>
+        </div>
+
+        <div class="menu">
+
+            <div class="links">
+                <ul class="link">
+                    <a href="./Home.html"><li>Home</li></a>
+                    <a href="./Jobs.html"><li>Jobs</li></a>
+                    <a href="./UnskilledJobs.html"><li>Unskilled-Jobs</li></a>
+                    <a href="./DrivingJobs.html"><li>Driving-Jobs</li></a>
+                    <a href="./PostJobs.html"><li>Post_Jobs</li></a>
+                    <a href="./AboutUs.html"><li>About_Us</li></a>
+                    <a href="./Contact.html"><li>Contacts</li></a>
+                </ul>
+            
+            </div>
+            <div class="login">
+                <img src="./Photos/user id.png" alt="User picture">
+                <a href="./Login.html"><h4 class="log">Log In</h4></a>
+                <a href="./SignUp.html"><h4>Sign Up</h4></a>
+            </div>
+
+        </div>
+
+        <div class="menu-drop" onclick="toggleMenu()">
+            <img src="./Photos/menu bar.png" alt="">
+        </div>
+
+    </nav>
+
+    <section class="home-view">
+        <div class="view">
+            
+            <div class="texts">
+                <h1>Find The Perfect Job<br>You Deserve</h1>
+
+                <p>Allover the World We Bring All Kinds Of Jobs Closer To You Either Remote Or Office-Based,<br><i>Within A Few Clicks Apply And Get Hired</i>.</p>
+            </div>
+            
+            <div class="buttons">
+                <a href="./Jobs.html">
+                    <button class="find">Find Jobs</button>
+                </a>
+
+                <a href="./PostJobs.html">
+                    <button class="post">Post Jobs</button>
+                </a>
+            </div>
+        
+            
+        </div>
+
+        <div class="search">
+
+            <input type="text" id="input" placeholder="Enter Keyword or Title to find a Job...." >
+            
+            <button  onclick="goToJobs()">Search</button>
+
+        </div>
+
+    </section>
+    <section class="grid">
+        <h1><b>CATERGORIES</b></h1>
+        <i><p class="grid-para">Explore various Jobs in a single sector</p></i>
+        
+        <div class="catergories">
+
+            <div class="job">
+            <div class="bg-image">
+                <img src="./Photos/business image.jpg" alt="job pic">
+            </div>
+
+            <h3>Business, Fianace & Administration</h3>
+            <p> <a href="./BussinessJobs.html">
+                    <i>See Vancies</i>
+                </a>
+            </p>
+        </div>
+
+
+        <div class="job">
+            <div class="bg-image">
+                <img src="./Photos/tech image.webp" alt="job pic">
+            </div>
+
+            <h3>Technology, Data & Digital</h3>
+            <p> <a href="./TechnologyJobs.html">
+                    <i>See Vancies</i>
+                </a>
+            </p>
+        </div>
+
+
+        <div class="job">
+            <div class="bg-image">
+                <img src="./Photos/medical image.jpg" alt="job pic">
+            </div>
+
+            <h3>Health & Medical</h3>
+            <p> <a href="./HealthJobs.html">
+                    <i>See Vancies</i>
+                </a>
+            </p>
+        </div>
+
+
+        <div class="job">
+            <div class="bg-image">
+                <img src="./Photos/education image.jpg" alt="job pic">
+            </div>
+
+            <h3>Education & Training</h3>
+            <p> <a href="./EducationJobs.html">
+                    <i>See Vancies</i>
+                </a>
+            </p>
+        </div>
+
+        <div class="job">
+            <div class="bg-image">
+                <img src="./Photos/law image.avif" alt="job pic">
+            </div>
+
+            <h3>Law & Government</h3>
+            <p> <a href="./LawJobs.html">
+                    <i>See Vancies</i>
+                </a>
+            </p>
+        </div>
+
+        <div class="job">
+            <div class="bg-image">
+                <img src="./Photos/engeer image.jpg" alt="job pic">
+            </div>
+
+            <h3>Engineering & Construction</h3>
+            <p> <a href="./EngineerJobs.html">
+                    <i>See Vancies</i>
+                </a>
+            </p>
+        </div>
+
+        <div class="job">
+            <div class="bg-image">
+                <img src="./Photos/media image.webp" alt="job pic">
+            </div>
+
+            <h3>Art & Media</h3>
+            <p> <a href="./MediaJobs.html">
+                    <i>See Vancies</i>
+                </a>
+            </p>
+        </div>
+
+        <div class="job">
+            <div class="bg-image">
+                <img src="./Photos/sell image.jpg" alt="job pic">
+            </div>
+
+            <h3>Sales and Services</h3>
+            <p> <a href="./SalesJobs.html">
+                    <i>See Vancies</i>
+                </a>
+            </p>
+        </div>
+          
+    </section>
+
+    <section class="unskilled">
+
+        <div class="unskilled-down">    
+            <div class="texts">
+                <h1>Unskilled?<br><span class="one">Unexprienced.?</span><br><span class="two">Unemployed.?</span><br><span class="three">But Dedicated to Working.</span></h1>
+
+                <p>MT Jobs is here to take you through various job that donot require prior training or skills,<br><i>Explore and Apply Now To Get Hired</i>.</p>
+            </div>
+            
+            <a href="./UnskilledJobs.html">
+                <div>
+                    <button class="explore">Explore</button>
+                </div>
+            </a>
+            
+        </div> 
+
+    </section>
+    
+    <section class="drivers">
+
+       <div class="drive">
+            
+            <div class="text">
+                <h1>DRIVING FOR PROSPERITY</h1>
+
+                <p>MT Jobs journeys you down to driving jobs for all types of cars including commercial, passenger vehicles and heavy machinery.<i>Apply Now To Get Hired</i>.</p>
+            </div>
+            
+            <a href="./DrivingJobs.html">
+                <div>
+                    <button class="drive">Drive Now</button>
+                </div>
+            </a>
+            
+        </div> 
+
+    </section>
+
+    <section class="joblists">
+        <h1>Latest Jobs <span><img src="./Photos/fire icon.png" alt=""></span></h1>
+        
+        <main class="latestJobs">
+            <!-- jobs from post jobs page after being save to local storage will be put here as the last created jobs -->
+        </main>
+
+        <div class="view-all">
+            <a href="./Jobs.html">
+                <button>View All Jobs</button>
+            </a>
+        </div>
+    </section>
+
+    <section class="why-us">
+        <h2>Why Choose MT Jobs?</h2>
+
+        <div class="features">
+            <div class="feature">
+                <h3>Fast Hiring</h3>
+                <p>Apply to jobs and get hired quickly.</p>
+            </div>
+
+            <div class="feature">
+                <h3>Verified Jobs</h3>
+                <p>We ensure jobs posted are real and safe.</p>
+            </div>
+
+            <div class="feature">
+                <h3>Free Access</h3>
+                <p>Search and apply for jobs at no cost.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="foot">
+            <div class="left-foot">
+                <h2>MT JOBS</h2>
+                
+                <p>
+                    MT Jobs is a modern platform built to connect job seekers and employers with right employment opportunities, here we created a simple and space to discover and apply for jobs.<br>
+                    MT Jobs provides employers with dashboard tools to manage incoming talent, effectively reducing the "time-to-hire" from months to weeks. In a tight labor market where skill shortages are a persistent challenge
+                </p>
+
+                <p>In conclusion, MT Jobs is more than just a website; it is a vital component of Malta's modern economic infrastructure. By empowering job seekers with better tools and offering employers a streamlined path to talent, it fosters a more dynamic, efficient, and transparent labor market. As the nature of work continues to evolve toward remote and hybrid models, the role of such digital intermediaries will only become more central to the nation's professional success.</p>
+
+                <span>Follow Us</span>
+
+                <div class="icons">
+                    <a href="https://x.com/MTJobs">
+                        <img src="./Photos/x logo.png" alt="x logo">
+                    </a>
+
+                   <a href="https://www.facebook.com/MTJobs">
+                        <img src="./Photos/facebook logo.png" alt="facebook logo">
+                   </a>
+
+                    <a href="whatsapp://send?phone=+256706679469&text=Hello%20MT%20Jobs!">
+                        <img src="./Photos/whatsapp logo.png" alt="whatsapp logo">
+                    </a>
+
+                    <a href="instagram://user?username=mtjobs">
+                        <img src="./Photos/insta logo.png" alt="instagram logo">
+                    </a>
+                    
+                    <a href="https://www.youtube.com/@MTJobs">
+                        <img src="./Photos/youtube logo.png" alt="youtube logo">
+                    </a>
+
+                    <a href="https://www.tiktok.com/@MTJobs">
+                        <img src="./Photos/tiktok logo.png" alt="tiktok logo">
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="middle-foot">
+
+                <h4>Quick Links</h4>
+
+                <ul class="footer-links">
+                    <a href="./Home.html"><li>Home</li></a>
+                    <a href="./Jobs.html"><li>Jobs</li></a>
+                    <a href="./PostJobs.html"><li>Post_Jobs</li></a>
+                    <a href="./AboutUs.html"><li>About_Us</li></a>
+                    <a href="./Contact.html"><li>Contacts</li></a>
+                    <a href="./UnskilledJobs.html"><li>Unskilled-Jobs</li></a>
+                    <a href="./DrivingJobs.html"><li>Driving-Jobs</li></a>
+                    <a href="./FAQS.html"><li>FAQS</li></a>
+                    <a href="./T$Cs.html"><li>Terms And Conditions</li></a>
+                    <a href="./Policy.html"><li>Policy & Privacy</li></a>
+                </ul>
+            </div>
+
+            <div class="right-foot">
+                <h4>Join Our Community</h4>
+
+                <form action="">
+
+                    <label for="">FIRST NAME</label><br>
+                    <input type="text" placeholder="first name"><br>
+
+                    <label for="">LAST NAME</label><br>
+                    <input type="text" placeholder="last name"><br>
+
+                    <label for="">EMAIL</label><br>
+                    <input type="email" placeholder="email"><br>
+
+                    <label for="">TELEPHONE</label><br>
+                    <input type="phone" placeholder="telephone"><br>
+
+                    <label for="">PASSWORD</label><br>
+                    <input type="password" placeholder="password"><br>
+
+                    <label for="">CONFIRM PASSWORD</label><br>
+                    <input type="password" placeholder="confirm password"><br>
+
+                    <button class="but" type="submit">Sign Up</button>
+
+                    <p>By clicking the Sign Up button, you agree to our <a href="./T$Cs.html">Terms and Conditions</a> and <a href="../Policy.html">Policy Privacy</a> </p>
+
+                </form>
+
+                <p>Already have an account? <a href="./Login.html">Login Here</a></p>
+
+            </div>
+
+        </div>
+
+        <p class="declaration">
+            &copy; 2026 MT Jobs. All rights reserved.
+        </p>
+
+    </footer>
+
+    <script>
+        
+        let jobs = JSON.parse(localStorage.getItem("jobs")) || [];
+        let container = document.querySelector(".latestJobs");
+
+        let latestJobs = jobs.slice(-5).reverse();
+
+        if (latestJobs.length === 0) {
+        container.innerHTML = "<p>No jobs available.</p>";
+        }
+
+        latestJobs.forEach(job => {
+        let card = document.createElement("div");
+        card.classList.add("jobCard");
+
+        let type = (job.categoryType || "").toLowerCase().trim();
+
+        // ✅ FIXED LABEL LOGIC
+        let label = "";
+        let labelClass = "";
+
+        if (type === "unskilled") {
+            label = "Unskilled Job";
+            labelClass = "unskilled";
+        } else if (type === "driving") {
+            label = "Driving Job";
+            labelClass = "driving";
+        } else {
+            label = "Skilled Job";
+            labelClass = "skilled";
+        }
+
+        card.innerHTML = `
+            <span class="job-label ${labelClass}">
+            ${label}
+            </span>
+
+            <h2>${job.title}</h2>
+            <p><strong>Job Details:</strong> ${job.description}</p>
+            <p><strong>Duration:</strong> ${job.duration || 'N.A'}</p>
+            <p><strong>Location:</strong> ${job.location}</p>
+            <p><strong>Contact:</strong> ${job.email}</p>
+            <p><strong>Employer:</strong> ${job.company || job.employer}</p>
+            <p class="job-time">${job.time}</p>
+
+
+            <button onclick="applyNow('${job.title}', '${job.email}', '${type}')">
+            Apply Now
+            </button>
+        `;
+
+        container.appendChild(card);
+        });
+
+        // function for apply button to for differrent label of jobs to the differrent apply pages
+        function applyNow(title, email, categoryType) {
+				let type = (categoryType || '').toLowerCase().trim();
+
+				let selectedJob = { title, email, categoryType: type };
+				localStorage.setItem('selectedJob', JSON.stringify(selectedJob));
+
+				if (type.includes('unskilled')) {
+					window.location.href = 'ApplyUnskilledJob.html';
+				} else if (type.includes('driving')) {
+					window.location.href = 'ApplyDrivingJob.html';
+				} else {
+					window.location.href = 'ApplyNow.html';
+				}
+			}
+
+        // function for the menu that shrinks links on small screens
+        function toggleMenu() {
+            const menu = document.querySelector(".menu");
+            menu.classList.toggle("active");
+        }
+
+        function goToJobs() {
+            const keyword = document.getElementById("input").value;
+
+            localStorage.setItem("searchKeyword", keyword);
+
+            window.location.href = "jobs.html";
+        }
+
+    </script>
+
+
+</body>
+</html>

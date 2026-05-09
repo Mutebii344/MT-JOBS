@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Post a Job</title>
+		<link rel="stylesheet" href="./Styles/PostJobs.css" />
+	</head>
+
+	<body>
+		<div class="container">
+			<h1>Post a Job</h1>
+
+			<!-- Job Type Buttons -->
+			<div class="job-type">
+				<button onclick="showForm('skilled')">Skilled Job</button>
+				<button onclick="showForm('unskilled')">Unskilled Job</button>
+				<button onclick="showForm('driving')">Driving Job</button>
+			</div>
+
+			<!-- ================= SKILLED ================= -->
+			<form id="skilledForm" class="job-form">
+				<h2>Skilled Job Posting</h2>
+
+				<select id="s_category" required>
+					<option value="">Select Category</option>
+					<option value="business">Business, Finance & Administration</option>
+					<option value="technology">Technology, Data & Digital</option>
+					<option value="health">Health & Medical</option>
+					<option value="education">Education & Training</option>
+					<option value="law">Law & Government</option>
+					<option value="engineering">Engineering & Construction</option>
+					<option value="media">Art & Media</option>
+					<option value="sales">Sales and Services</option>
+				</select>
+
+				<input id="s_title" placeholder="Job Title" required />
+				<textarea
+					id="s_description"
+					placeholder="Job Description"
+					required
+				></textarea>
+				<input id="s_location" placeholder="Location" required />
+				<input id="s_company" placeholder="Company Name" required />
+				<input id="s_email" type="email" placeholder="Email" required />
+
+				<button type="submit">Post Skilled Job</button>
+			</form>
+
+			<!-- ================= UNSKILLED ================= -->
+			<form id="unskilledForm" class="job-form">
+				<h2>Unskilled Job Posting</h2>
+
+				<input id="u_title" placeholder="Job Title" required />
+				<textarea
+					id="u_description"
+					placeholder="Job Description"
+					required
+				></textarea>
+				<input id="u_duration" placeholder="Duration" required />
+				<input id="u_location" placeholder="Location" required />
+				<input id="u_company" placeholder="Company Name" required />
+				<input id="u_deadline" placeholder="Deadline Date" required />
+				<input id="u_email" type="email" placeholder="Email" required />
+
+				<button type="submit">Post Unskilled Job</button>
+			</form>
+
+			<!-- ================= DRIVING ================= -->
+			<form id="drivingForm" class="job-form">
+				<h2>Driving Job Posting</h2>
+
+				<input id="d_title" placeholder="Job Title" required />
+				<textarea
+					id="d_description"
+					placeholder="Job Description"
+					required
+				></textarea>
+				<input id="d_duration" placeholder="Duration" required />
+				<input id="d_location" placeholder="Location" required />
+				<input id="d_company" placeholder="Company Name" required />
+				<input id="d_deadline" required placeholder="Deadline Date" />
+				<input id="d_email" type="email" placeholder="Email" required />
+
+				<button type="submit">Post Driving Job</button>
+			</form>
+		</div>
+
+		<script>
+			// Show correct form
+			function showForm(type) {
+				document.getElementById('skilledForm').style.display =
+					type === 'skilled' ? 'block' : 'none';
+
+				document.getElementById('unskilledForm').style.display =
+					type === 'unskilled' ? 'block' : 'none';
+
+				document.getElementById('drivingForm').style.display =
+					type === 'driving' ? 'block' : 'none';
+			}
+
+			// ================= SKILLED =================
+			document
+				.getElementById('skilledForm')
+				.addEventListener('submit', function (e) {
+					e.preventDefault();
+
+					let job = {
+						categoryType: 'skilled',
+						category: document.getElementById('s_category').value, // ✅ NEW
+						title: document.getElementById('s_title').value,
+						description: document.getElementById('s_description').value,
+						location: document.getElementById('s_location').value,
+						company: document.getElementById('s_company').value,
+						email: document.getElementById('s_email').value,
+
+						time: new Date().toLocaleString(),
+					};
+
+					saveJob(job);
+					alert('Skilled Job Posted!');
+					this.reset();
+				});
+
+			// ================= UNSKILLED =================
+			document
+				.getElementById('unskilledForm')
+				.addEventListener('submit', function (e) {
+					e.preventDefault();
+
+					let job = {
+						categoryType: 'unskilled',
+						title: document.getElementById('u_title').value,
+						description: document.getElementById('u_description').value,
+						duration: document.getElementById('u_duration').value,
+						location: document.getElementById('u_location').value,
+						company: document.getElementById('u_company').value,
+						deadline: document.getElementById('u_deadline').value,
+						email: document.getElementById('u_email').value,
+						time: new Date().toLocaleString(),
+					};
+
+					saveJob(job);
+					alert('Unskilled Job Posted!');
+					this.reset();
+				});
+
+			// ================= DRIVING =================
+			document
+				.getElementById('drivingForm')
+				.addEventListener('submit', function (e) {
+					e.preventDefault();
+
+					let job = {
+						categoryType: 'driving',
+						title: document.getElementById('d_title').value,
+						description: document.getElementById('d_description').value,
+						duration: document.getElementById('d_duration').value,
+						location: document.getElementById('d_location').value,
+						company: document.getElementById('d_company').value,
+						deadline: document.getElementById('d_deadline').value,
+						email: document.getElementById('d_email').value,
+						time: new Date().toLocaleString(),
+					};
+
+					saveJob(job);
+					alert('Driving Job Posted!');
+					this.reset();
+				});
+
+			// ================= SAVE FUNCTION =================
+			function saveJob(job) {
+				let jobs = JSON.parse(localStorage.getItem('jobs')) || [];
+				jobs.push(job);
+				localStorage.setItem('jobs', JSON.stringify(jobs));
+
+				console.log('Saved Jobs:', jobs); // debug
+			}
+
+			function cleanExpiredJobs() {
+				let jobs = JSON.parse(localStorage.getItem('jobs')) || [];
+
+				let today = new Date().toISOString().split('T')[0];
+
+				let activeJobs = jobs.filter((job) => job.deadline >= today);
+
+				localStorage.setItem('jobs', JSON.stringify(activeJobs));
+			}
+		</script>
+	</body>
+</html>

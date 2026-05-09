@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Unskilled Jobs</title>
+		<link rel="stylesheet" href="./Styles/UnskilledJobs.css" />
+	</head>
+	<body>
+		<div class="container">
+			<h1>Available Unskilled Jobs</h1>
+
+			<div id="jobsContainer"></div>
+		</div>
+
+		<script>
+			let jobs = JSON.parse(localStorage.getItem('jobs')) || [];
+			let container = document.getElementById('jobsContainer');
+
+			jobsContainer = jobs.reverse();
+
+			jobs.forEach((job) => {
+				if (job.categoryType === 'unskilled') {
+					let jobCard = document.createElement('div');
+					jobCard.classList.add('job-card');
+
+					jobCard.innerHTML = `
+                    <h2>${job.title}</h2>
+                    <p><strong>Description:</strong> ${job.description}</p>
+                    <p><strong>Duration:</strong> ${job.duration}</p>
+                    <p><strong>Location:</strong> ${job.location}</p>
+                    <p><strong>Company:</strong> ${job.company}</p>
+                    <p><strong>Deadline:</strong> ${job.deadline}</p>
+                    <p><strong>Contact:</strong> ${job.email} | ${job.phone}</p>
+					<p class="job-time">${job.time}</p>
+
+                   <button onclick="applyNow('${job.title}', '${job.email}', '${job.categoryType}')">
+                        Apply Now
+                    </button>
+                `;
+
+					container.appendChild(jobCard);
+				}
+			});
+
+			function applyNow(title, email, categoryType) {
+				let type = (categoryType || '').toLowerCase().trim();
+
+				let selectedJob = { title, email, categoryType: type };
+				localStorage.setItem('selectedJob', JSON.stringify(selectedJob));
+
+				if (type.includes('unskilled')) {
+					window.location.href = 'ApplyUnskilledJob.html';
+				} else if (type.includes('driving')) {
+					window.location.href = 'ApplyDrivingJob.html';
+				} else {
+					window.location.href = 'ApplyNow.html';
+				}
+			}
+		</script>
+	</body>
+</html>

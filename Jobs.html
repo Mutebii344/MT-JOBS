@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>All Jobs</title>
+		<link rel="stylesheet" href="./Styles/jobs.css" />
+	</head>
+
+	<body>
+		<div class="container">
+			<h1>All Available Jobs</h1>
+
+			<div class="search">
+				<div class="search-bar">
+					<input
+						type="text"
+						id="input"
+						placeholder="Search jobs, companies, or location..."
+					/>
+
+					<button onclick="searchJobs()">Search</button>
+					<button class="reset" onclick="resetJobs()">Reset</button>
+				</div>
+			</div>
+
+			<div id="jobsContainer"></div>
+		</div>
+
+		<script>
+			let jobs = JSON.parse(localStorage.getItem('jobs')) || [];
+			let container = document.getElementById('jobsContainer');
+
+			let jobsContainer = jobs.reverse();
+
+			// get category from URL
+			let params = new URLSearchParams(window.location.search);
+			let selectedCategory = params.get('category');
+
+			container.innerHTML = '';
+
+			console.log('Jobs:', jobs);
+			console.log('Selected Category:', selectedCategory);
+
+			if (jobs.length === 0) {
+				container.innerHTML = '<p>No jobs posted yet.</p>';
+			}
+
+			jobs.forEach((job) => {
+				// ✅ FILTER BY CATEGORY (if selected)
+				if (selectedCategory && job.category !== selectedCategory) {
+					return;
+				}
+
+				let jobCard = document.createElement('div');
+				jobCard.classList.add('job-card');
+
+				// job type label
+				let type = (job.categoryType || '').toLowerCase().trim();
+
+				let label = '';
+				let labelClass = '';
+
+				if (type.includes('unskilled')) {
+					label = 'Unskilled Job';
+					labelClass = 'unskilled';
+				} else if (type.includes('driving')) {
+					label = 'Driving Job';
+					labelClass = 'driving';
+				} else {
+					label = 'Skilled Job';
+					labelClass = 'skilled';
+				}
+
+				jobCard.innerHTML = `
+					<span class="label ${labelClass}">${label}</span>
+
+					<h2>${job.title}</h2>
+					<p><strong>Job Details:</strong> ${job.description}</p>
+					<p><strong>Duration:</strong> ${job.duration || 'N.A'}</p>
+					<p><strong>Location:</strong> ${job.location}</p>
+					<p><strong>Employer:</strong> ${job.company || job.employer}</p>
+					<p><strong>Contact:</strong> ${job.email}</p>
+					<p class="job-time">${job.time}</p>
+
+					<button onclick="applyNow('${job.title}', '${job.email}', '${type}')">
+						Apply Now
+					</button>
+				`;
+
+				container.appendChild(jobCard);
+			});
+
+			// APPLY FUNCTION
+			function applyNow(title, email, categoryType) {
+				let type = (categoryType || '').toLowerCase().trim();
+
+				let selectedJob = { title, email, categoryType: type };
+				localStorage.setItem('selectedJob', JSON.stringify(selectedJob));
+
+				if (type.includes('unskilled')) {
+					window.location.href = 'ApplyUnskilledJob.html';
+				} else if (type.includes('driving')) {
+					window.location.href = 'ApplyDrivingJob.html';
+				} else {
+					window.location.href = 'ApplyNow.html';
+				}
+			}
+
+			// SEARCH FUNCTION
+			function searchJobs() {
+				const keyword = document
+					.getElementById('input')
+					.value.toLowerCase()
+					.trim();
+
+				const jobCards = document.querySelectorAll('.job-card');
+
+				let found = false;
+
+				jobCards.forEach((job) => {
+					const text = job.textContent.toLowerCase();
+
+					if (text.includes(keyword)) {
+						job.style.display = 'block';
+						found = true;
+					} else {
+						job.style.display = 'none';
+					}
+				});
+
+				if (!found) {
+					container.innerHTML = '<p>No matching jobs found.</p>';
+				}
+			}
+
+			// RESET FUNCTION
+			function resetJobs() {
+				document.getElementById('input').value = '';
+				location.reload(); // simplest reset
+			}
+		</script>
+	</body>
+</html>

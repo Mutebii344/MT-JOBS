@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MT Jobs - Login</title>
+    <link rel="stylesheet" href="./Styles/Login.css">
+</head>
+
+<body>
+
+    <input type="checkbox" id="darkToggle">
+
+    <div class="page">
+
+        <div class="container">
+
+            <h1>MT Jobs</h1>
+
+            <label for="darkToggle" class="dark-btn">🌙Dark Mode</label>
+
+            <div class="role">
+                <input type="radio" name="role" id="job" checked>
+                <label for="job">Job Seeker</label>
+
+                <input type="radio" name="role" id="emp">
+                <label for="emp">Employer</label>
+            </div>
+
+            <p style="text-align:center; font-size:14px;">
+                Login to your account
+            </p>
+
+            <form>
+                <label>Email</label>
+                <input type="email" required>
+
+                <label>Password</label>
+                <input type="password" required>
+
+                <div class="options">
+                    <label class="remember">
+                        <input type="checkbox">
+                        Remember me
+                    </label>
+
+                    <a href="#">Forgot?</a>
+                </div>
+
+                <button type="submit">Login</button>
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* BODY */
+body {
+    background: #f4f6f9;
+}
+
+/* PAGE CENTER */
+.page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CARD */
+.container {
+    width: 400px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* TITLE */
+h1 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 10px;
+}
+
+/* DARK TOGGLE */
+#darkToggle {
+    display: none;
+}
+
+.dark-btn {
+    display: block;
+    text-align: center;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #1e3a8a;
+}
+
+/* ROLE */
+.role {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.role input {
+    display: none;
+}
+
+.role label {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    background: #e5e7eb;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.role input:checked + label {
+    background: #1e3a8a;
+    color: white;
+}
+
+/* FORM */
+label {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* OPTIONS */
+.options {
+    margin: 12px 0;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+}
+
+/* BUTTON */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #1e3a8a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #162f6b;
+}
+
+/* LOGIN LINK */
+.login-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.login-link a {
+    color: #1e3a8a;
+    text-decoration: none;
+}
+
+/* ===================== */
+/* 🌙 DARK MODE */
+/* ===================== */
+
+#darkToggle:checked ~ .page {
+    background: #0f172a;
+    color: #e2e8f0;
+}
+
+#darkToggle:checked ~ .page .container {
+    background: #1e293b;
+}
+
+#darkToggle:checked ~ .page h1 {
+    color: #3b82f6;
+}
+
+#darkToggle:checked ~ .page input {
+    background: #0f172a;
+    color: white;
+    border: 1px solid #334155;
+}
+
+#darkToggle:checked ~ .page .role label {
+    background: #334155;
+    color: #e2e8f0;
+}
+
+#darkToggle:checked ~ .page .role input:checked + label {
+    background: #3b82f6;
+}
+
+#darkToggle:checked ~ .page button {
+    background: #3b82f6;
+}
+
+#darkToggle:checked ~ .page a {
+    color: #3b82f6;
+}

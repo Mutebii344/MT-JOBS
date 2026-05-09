@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Business Jobs</title>
+		<link rel="stylesheet" href="./Styles/Education.css" />
+	</head>
+	<body>
+		<h1>Education And Training Jobs</h1>
+
+		<div id="jobContainer"></div>
+
+		<script>
+			let jobs = JSON.parse(localStorage.getItem('jobs')) || [];
+
+			let container = document.getElementById('jobContainer');
+
+			// Filter only BUSINESS jobs
+			let filteredJobs = jobs.filter(
+				(job) => job.category && job.category.toLowerCase() === 'education'
+			);
+
+			filteredJobs.forEach((job) => {
+				let card = document.createElement('div');
+				card.classList.add('job-card');
+
+				card.innerHTML = `
+                <div class="job-info">
+                    <h3>${job.title}</h3>
+                    <p><strong>Company:</strong> ${job.company}</p>
+                    <p><strong>Location:</strong> ${job.location}</p> 
+                    <p><strong>Description:</strong> ${job.description}</p>
+                    <p class="job-time">${job.time}</p>
+                </div>
+
+                <button onclick="applyNow('${job.title}', '${job.email}')">
+                    Apply Now
+                </button>
+            `;
+
+				container.appendChild(card);
+			});
+
+			function applyNow(title, email) {
+				let selectedJob = { title, email };
+				localStorage.setItem('selectedJob', JSON.stringify(selectedJob));
+				window.location.href = 'applyNow.html';
+			}
+		</script>
+	</body>
+</html>
